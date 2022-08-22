@@ -1,6 +1,4 @@
 # flux-multi-stage
 
-asefasdfasdfasfasf
-
-asdf
+asdfasf
 asdfasfasdf
