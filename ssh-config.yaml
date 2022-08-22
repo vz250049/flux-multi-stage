@@ -1,0 +1,52 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIyMDQwNjE1NTE1OVoXDTMyMDQwNDE1NTE1OVowFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALBK
+      V+p/08qv4YeDDgU5iX8OmkFHsjFaL8Ru0XXk78D8TWMhl5Wt5sCvCXPH2ZVpw323
+      Mc6O7bI2IvROS8bzs7vJLwjnKbqUScHeypnblteqNxEU4HUi1nlDs/x5/gB5Hl+s
+      raV+UH8et6EAZykgLdodCTeP9yfYuzZn7S0LrRN1gKweVP+aeTmVQefgIaxPhIup
+      e0znMlk9r1bto2VWqY+lrvWbh6d5TblRr5fLHKq7stopm1O79fmvXEneH1QBzjVh
+      UiXVL/E5UwCQdU7nm24VZT8kqVIsUUWiCJzdvPUCGCLcGv6k3VONef7Ld+uMXhWs
+      VSx6bJRQ4O6mcBu4MckCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBQGOsg+YmSohiCiAZl6olZeNAN98DANBgkqhkiG9w0BAQsFAAOCAQEAheAJrLG/
+      KBroZTCcGXb6VcMqSnOqfIbWN1p9zxNfX1kKzK7mwYJX1StTyvittEXRrqarwwvJ
+      L8ZR2cT0+xXpMxxwOuajLVIhyp7cuqmDFH3yv/jGVvIfi/0grO9ZpKVW9tLBIgcP
+      R6SsD+DzPG2hrr4GbcBCe9Wuvm52R4KhT/nG/Pae61NP/g/1wcoY9CHty/XU4VOi
+      l2ddNctBkTZa9zQE/5jYAwihjEnTXvEyVYEnz4JYUG4erkRhvF0Zx20wcfOgtQBp
+      FotiI0ZlztMKwGds0NXlAMQ6ocX9bZOQYWdB7XKanXhzYo8u3mYL/ueREB6fkHR1
+      0KrbwGRF9wsgUw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2022-08-19T13:54:33Z"
+    name: kube-root-ca.crt
+    namespace: flux
+    resourceVersion: "15380"
+    uid: b9c24af4-43fc-4c68-9b6d-383b530f0372
+- apiVersion: v1
+  data:
+    config: |
+      Host *
+         StrictHostKeyChecking no
+         UserKnownHostsFile=/dev/null
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2022-08-22T16:12:17Z"
+    name: ssh-config
+    namespace: flux
+    resourceVersion: "192447"
+    uid: 13e4ffae-164e-4ac8-b48a-ff0a5c70e4d0
+kind: List
+metadata:
+  resourceVersion: ""
